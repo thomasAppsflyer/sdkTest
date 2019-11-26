@@ -21,8 +21,9 @@
     <script>
         window.onload = function () {
             document.getElementById('checkout').addEventListener('click', function () {
-                AF('pba', 'event' {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'checkout'});
                 alert("Checkout!");
+                AF('pba', 'event' {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'checkout'});
+                
             });
         }
 
