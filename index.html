@@ -1,12 +1,34 @@
-# sdkTest
-Web SDK Test
+<html>
+<head>
+    <!-- The Web SDK script has to load first -->
+    <script>
+      !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
+      (t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},
+      t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
+      o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
+      p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","e2f4ef83-f24c-493d-b5b4-100ab5d381e2")
+    </script>
 
+        };
+    // this function stores the user email to be sent to the server after the user reaches the thank you page
+    // the response from the server is a unique user ID that we use in the IDENTIFY event type
+        function storeUserEmail (){
+            var userEmail = document.getElementById('email').value;
+            localStorage.setItem('user_email', userEmail);
+        }
+    </script>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form onsubmit="storeUserEmail()" action="/signup" method="post">
+        <div><label>Name</label>
+            <input type="text" name="name" id="name"></div>
+        <br />
+        <div> <label>Email</label>
+            <input type="email" name="email" id="email"></div>
+        <br />
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
 
-<!-- AppsFlyer web SDK -->
-<script>
-!function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
-(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},
-t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
-o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
-p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","e2f4ef83-f24c-493d-b5b4-100ab5d381e2")
-</script>
